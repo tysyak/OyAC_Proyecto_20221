@@ -15,9 +15,9 @@ siendo el perímetro y el apotema números enteros.
 
 ## Estado Actual
 
-Las instrucciones se definen en [`memoria_datos.vhd`](./Risc/memoria_datos.vhd)
+El programa se define en [`memoria_inst.vhd`](./Risc/memoria_inst.vhd)
 
-En el archivo [`u_control.vhd`](./Risc/u_control.vhd)
+Y las instrucciones en [`u_control.vhd`](./Risc/u_control.vhd)
 
 - [ ] **Multiplicación**. Se trabaja en un ciclo para sumar la entrada dada. 
 - [X] **División**. Para simular la división entre dos se correrá un bit a la derecha con la instrucción `ASRB` o `ASR`.
