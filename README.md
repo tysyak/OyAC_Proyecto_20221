@@ -15,6 +15,8 @@ siendo el perímetro y el apotema números enteros.
 
 ## Estado Actual
 
+Las instrucciones se definen en [`memoria_datos.vhd`](./Risc/memoria_datos.vhd)
+
 En el archivo [`u_control.vhd`](./Risc/u_control.vhd)
 
 - [ ] **Multiplicación**. Se trabaja en un ciclo para sumar la entrada dada. 
@@ -23,3 +25,4 @@ En el archivo [`u_control.vhd`](./Risc/u_control.vhd)
 # Referencias
 
 + P. M. (1999). *68HC11 Programmer’s Reference Manual*.
++ J. J., & G. V. (n.d.). Diseño de microprocesadores. México: Facultad de Ingeniería.
