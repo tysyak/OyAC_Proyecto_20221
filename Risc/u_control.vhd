@@ -189,6 +189,26 @@ begin
 	memw <= '0';
 	seldirw <= "00";
 
+    elsif (inst = X"00D1") then -- CMPB (Compara B con dato)
+	selregr <= X"5";
+	sels1 <= '0';
+	sr <= '1';
+	cin <= '0';
+	sels2 <= '0';
+	seldato <= '1';
+	selsrc <= "010";
+	seldir <= "01";
+	selop <= X"2";
+	selresult <= "00";
+	selc <= '1';
+	cadj <= '1';
+	selfalgs <= X"3";
+	selbranch <= "000";
+	vf <= '1';
+	selregw <= "000";
+	memw <= '0';
+	seldirw <= "00";
+
     elsif inst = X"005C" then -- incb (inh)
 	selregr <= X"5";
 	sels1 <= '0';
