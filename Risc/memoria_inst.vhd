@@ -7,7 +7,7 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity memoria_inst is
   Port( direccion : in STD_LOGIC_VECTOR (15 downto 0);
-	datos : out STD_LOGIC_VECTOR (31 downto 0));
+        datos : out STD_LOGIC_VECTOR (31 downto 0));
 end memoria_inst;
 
 architecture Behavioral of memoria_inst is
@@ -16,7 +16,7 @@ architecture Behavioral of memoria_inst is
   signal memoria : memory;
 begin
 
- --2 * 6 ----------------------------------------------------------------------
+  --2 * 6 ----------------------------------------------------------------------
   memoria(0) <= x"00010000";
   memoria(1) <= x"00010000";
   memoria(2) <= x"00010000";
