@@ -29,5 +29,5 @@ En las líneas 20 y 25 de [`memoria_inst.vhd`](./Risc/memoria_inst.vhd) se
 
 # Referencias
 
-+ P. M. (1999). *68HC11 Programmer’s Reference Manual*.
++ [P. M. (1999). *68HC11 Programmer’s Reference Manual*.](https://ecampus.matc.edu/lokkenr/elctec-141/68hc11ur.pdf)
 + J. J., & G. V. (n.d.). Diseño de microprocesadores. México: Facultad de Ingeniería.
