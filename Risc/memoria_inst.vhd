@@ -12,79 +12,81 @@ end memoria_inst;
 
 architecture Behavioral of memoria_inst is
 
-  type memory is array(0 to 70) of std_logic_vector(31 downto 0);
+  type memory is array(0 to 67) of std_logic_vector(31 downto 0);
   signal memoria : memory;
 begin
 
   --2 * 6 ----------------------------------------------------------------------
-  memoria(0) <= x"00860006";
-  memoria(1) <= x"00010000";
-  memoria(2) <= x"00B70002";
-  memoria(3) <= x"00010000";
-  memoria(4) <= x"00010000";
-  memoria(5) <= x"00860003";
-  memoria(6) <= x"00010000";
-  memoria(7) <= x"00B70003";
-  memoria(8) <= x"00010000";
-  memoria(9) <= x"00010000";
-  memoria(10) <= x"00860000";
-  memoria(11) <= x"00010000";
-  memoria(12) <= x"00B70000";
-  memoria(13) <= x"00010000";
-  memoria(14) <= x"00010000";
-  memoria(15) <= x"00960002";
-  memoria(16) <= x"00010000";
-  memoria(17) <= x"00B70004";
-  memoria(18) <= x"00010000";
-  memoria(19) <= x"00010000";
-  memoria(20) <= x"00010000";
-  memoria(21) <= x"00960000";
-  memoria(22) <= x"00010000";
-  memoria(23) <= x"00D60004";
-  memoria(24) <= x"00010000";
-  memoria(25) <= x"00110000";
-  memoria(26) <= x"00270034";
-  memoria(27) <= x"00010000";
-  memoria(28) <= x"00010000";
-  memoria(29) <= x"00010000";
-  memoria(30) <= x"00010000";
-  memoria(31) <= x"00960000";
-  memoria(32) <= x"00010000";
-  memoria(33) <= x"004C0000";
-  memoria(34) <= x"00010000";
-  memoria(35) <= x"00B70000";
-  memoria(36) <= x"00010000";
-  memoria(37) <= x"00010000";
-  memoria(38) <= x"00960004";
-  memoria(39) <= x"00D60002";
-  memoria(40) <= x"00010000";
-  memoria(41) <= x"00010000";
-  memoria(42) <= x"001B0000";
-  memoria(43) <= x"00010000";
-  memoria(44) <= x"00D60003";
-  memoria(45) <= x"00010000";
-  memoria(46) <= x"00B70004";
-  memoria(47) <= x"00010000";
-  memoria(48) <= x"00960000";
-  memoria(49) <= x"00010000";
-  memoria(50) <= x"00010000";
-  memoria(51) <= x"00270018";
-  memoria(52) <= x"00000000";
-  memoria(53) <= x"00000000";
-  memoria(54) <= x"00000000";
-  memoria(55) <= x"00000000";
-  memoria(56) <= x"00000000";
-  memoria(57) <= x"00000000";
-  memoria(58) <= x"00000000";
-  memoria(59) <= x"00000000";
-  memoria(60) <= x"00000000";
-  memoria(61) <= x"00000000";
-  memoria(62) <= x"00000000";
-  memoria(63) <= x"00000000";
-  memoria(64) <= x"00000000";
-  memoria(65) <= x"00000000";
-  memoria(66) <= x"00000000";
-  memoria(67) <= x"00000000";
+memoria(0) <= x"00860006"; -- A=6 declaracion a
+memoria(1) <= x"00010000"; --
+memoria(2) <= x"00B70002"; -- M2 = 6
+memoria(3) <= x"00010000"; --  Fin declaracion a
+memoria(4) <= x"00010000"; --
+memoria(5) <= x"00860003"; -- A=3 declaracion b
+memoria(6) <= x"00010000"; --
+memoria(7) <= x"00B70003"; -- M3 = 3
+memoria(8) <= x"00010000"; --  Fin Declaración b
+memoria(9) <= x"00010000"; --
+memoria(10) <= x"00860001"; -- A=0 declaracion i
+memoria(11) <= x"00010000"; --
+memoria(12) <= x"00B70000"; -- M0 = 1
+memoria(13) <= x"00010000"; --  Fin Declaración i
+memoria(14) <= x"00010000"; --
+memoria(15) <= x"00960002"; -- A=M2 declaracion aux
+memoria(16) <= x"00010000"; --
+memoria(17) <= x"00B70004"; -- M4 = M2
+memoria(18) <= x"00010000"; --  Fin declaracion aux
+memoria(19) <= x"00010000"; --
+memoria(20) <= x"00010000"; --
+memoria(21) <= x"00010000"; --
+memoria(22) <= x"00D60003"; --  here
+memoria(23) <= x"00960000"; --
+memoria(24) <= x"00010000"; --
+memoria(25) <= x"00010000"; --
+memoria(26) <= x"00110000"; --  if a = b then div
+memoria(27) <= x"00270031"; --
+memoria(28) <= x"00010000"; --
+memoria(29) <= x"00010000"; --
+memoria(30) <= x"00010000"; --
+memoria(31) <= x"00010000"; --  else
+memoria(32) <= x"00960004"; -- a=m4(aux)
+memoria(33) <= x"00D60002"; -- b=m2(a)
+memoria(34) <= x"00010000"; --
+memoria(35) <= x"00010000"; --
+memoria(36) <= x"001B0000"; -- a=a+b
+memoria(37) <= x"00010000"; --
+memoria(38) <= x"00D60003"; -- b=m3(b)
+memoria(39) <= x"00010000"; --
+memoria(40) <= x"00B70004"; -- M4=a(aux)
+memoria(41) <= x"00960000"; -- a=m0(i)
+memoria(42) <= x"00010000"; --
+memoria(43) <= x"004C0000"; -- a++
+memoria(44) <= x"00010000"; --
+memoria(45) <= x"00010000"; --
+memoria(46) <= x"00B70000"; -- m0(i)=a
+memoria(47) <= x"007E0016"; --
+memoria(48) <= x"00010000"; --
+memoria(49) <= x"00010000"; --
+memoria(50) <= x"00D60004"; -- b=m4(aux) div
+memoria(51) <= x"00570000"; --
+memoria(52) <= x"00570000"; --
+memoria(53) <= x"00570000"; --
+memoria(54) <= x"00000000"; --
+memoria(55) <= x"00000000"; --
+memoria(56) <= x"00000000"; --
+memoria(57) <= x"00000000"; --
+memoria(58) <= x"00000000"; --
+memoria(59) <= x"00000000"; --
+memoria(60) <= x"00000000"; --
+memoria(61) <= x"00000000"; --
+memoria(62) <= x"00000000"; --
+memoria(63) <= x"00000000"; --
+memoria(64) <= x"00000000"; --
+memoria(65) <= x"00000000"; --
+memoria(66) <= x"00000000"; --
+memoria(67) <= x"00000000"; --
+
+
 
 
   process(direccion)

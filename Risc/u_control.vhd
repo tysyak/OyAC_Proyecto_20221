@@ -410,6 +410,47 @@ begin
 	memw <= '0';
 	seldirw <= "00";
 
+    elsif inst = X"0057" then -- asrb (inh) Corrimiento a la derecha en b
+	selregr <= X"5";
+	sels1 <= '0';
+	sr <= '1';
+	cin <= '0';
+	sels2 <= '0';
+	seldato <= '1';
+	selsrc <= "001";
+	seldir <= "00";
+	selop <= X"7";
+	selresult <= "01";
+	selc <= '1';
+	cadj <= '0';
+	selfalgs <= X"3";
+	selbranch <= "000";
+	vf <= '1';
+	selregw <= "100";
+	memw <= '0';
+	seldirw <= "00";
+
+    elsif inst = X"0067" then -- asr
+	selregr <= X"9";
+	sels1 <= '1';
+	sr <= '1';
+	cin <= '0';
+	sels2 <= '0';
+	seldato <= '1';
+	selsrc <= "100";
+	seldir <= "00";
+	selop <= X"7";
+	selresult <= "01";
+	selc <= '1';
+	cadj <= '0';
+	selfalgs <= X"3";
+	selbranch <= "000";
+	vf <= '1';
+	selregw <= "000";
+	memw <= '0';
+	seldirw <= "10";
+
+
     end if;
 
   end process;
