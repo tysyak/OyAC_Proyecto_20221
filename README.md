@@ -12,6 +12,26 @@ Se usará la siguiente formula: <img
 src="https://render.githubusercontent.com/render/math?math=\frac{perimetro%20\times%20apotema}{2}">;
 siendo el perímetro y el apotema números enteros.
 
+## Instrucciones
+
+1. Abrimos Quartus de manera normal y abrimos el archivo
+   [`Risc/pipeline.qpf`](./Risc/pipeline.qpf).
+   ![1](./img/1.png)
+   ![2](./img/2.png)
+2. Preparamos las variables en las líneas 20 y 25 de
+[`memoria_inst.vhd`](./Risc/memoria_inst.vhd).
+    ![3](./img/3.png)
+3. Compilamos con `ctrl + l`.
+3. Comprobamos con el simulador abriendo el archivo
+   ![4](./img/4.png)
+   ![5](./img/5.png)
+   ![6](./img/6.png)
+   [`Waveform.vwf`](./Risc/Waveform.vwf).
+4. Revisamos en `ACCB_D`si el resultado es el correcto. En la siguiente imágen
+   se muestra la operación  <img
+src="https://render.githubusercontent.com/render/math?math=\frac{6%20\times%208}{2}">
+    ![7](./img/7.png)
+
 
 ## Estado Actual
 
