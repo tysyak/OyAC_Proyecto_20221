@@ -19,8 +19,13 @@ El programa se define en [`memoria_inst.vhd`](./Risc/memoria_inst.vhd)
 
 Y las instrucciones en [`u_control.vhd`](./Risc/u_control.vhd)
 
-- [ ] **Multiplicación**. Se trabaja en un ciclo para sumar la entrada dada. 
+- [X] **Multiplicación**. Se trabaja en un ciclo para sumar la entrada dada. 
 - [X] **División**. Para simular la división entre dos se correrá un bit a la derecha con la instrucción `ASRB` o `ASR`.
+
+Se termina la multiplicación y la división, el resultado se almacena en `ACCB`.
+
+En las líneas 20 y 25 de [`memoria_inst.vhd`](./Risc/memoria_inst.vhd) se
+"declaran" los dos números a tratar (apotema y perimetro).
 
 # Referencias
 
