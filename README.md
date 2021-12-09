@@ -21,7 +21,7 @@ siendo el perímetro y el apotema números enteros.
 
 ![2](./img/2.png)
 
-2. Preparamos las variables en las líneas 20 y 25 de
+2. Preparamos las variables (en hexadecimal) en las líneas 20 y 25 de
 [`memoria_inst.vhd`](./Risc/memoria_inst.vhd).
 
 ![3](./img/3.png)
