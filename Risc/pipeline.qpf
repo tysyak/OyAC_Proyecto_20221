@@ -18,17 +18,17 @@
 # -------------------------------------------------------------------------- #
 #
 # Quartus Prime
-# Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
-# Date created = 15:03:49  June 02, 2018
-# Organizacion y Arquitectura de Cmputadoras
-# Semestre 2020-2
+# Version 20.1.1 Build 720 09/12/2021 SJ Lite Edition
+# Date created = 15:03:49  December 09, 2021
+# Organizacion y Arquitectura de Computadoras
+# Semestre 2022-1
 # Version corregida y aumentada
-# Prof.: Jose Luis Cruz Mora
+# Prof.: ING. Hugo Enrique Estrada Leon
 # Proyecto Final
 # -------------------------------------------------------------------------- #
 
-QUARTUS_VERSION = "15.1"
-DATE = "15:03:49  June 02, 2018"
+QUARTUS_VERSION = "20.1.1"
+DATE = "15:03:49  December 09, 2021"
 
 # Revisions
 
