@@ -86,9 +86,6 @@ begin
   memoria(66) <= x"00000000"; --
   memoria(67) <= x"00000000"; --
 
-
-
-
   process(direccion)
   begin
     datos <= memoria(conv_integer(unsigned(direccion)));
