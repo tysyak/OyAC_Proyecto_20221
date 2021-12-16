@@ -1,4 +1,4 @@
-% Created 2021-12-16 jue 11:13
+% Created 2021-12-16 jue 13:04
 % Intended LaTeX compiler: lualatex
 \documentclass{IEEEtran}
 \usepackage[left=1.5cm,right=1.5cm,letterpaper]{geometry}
@@ -25,11 +25,11 @@
 \AfterEndEnvironment{minted}{\end{code}}
 \usepackage[backend=biber,style=ieee]{biblatex}
 \addbibresource{./main.bib}
-\author{Castelan Hernandez Mario, Miranda Hernández Alejandro, Romero Andrade Cristian, Sánchez Brito Diego y Solano Morales Isaac Uriel}
+\author{Brito Sánchez Diego, Castelan Hernandez Mario, Miranda Hernández Alejandro, Romero Andrade Cristian y Solano Morales Isaac Uriel}
 \date{\today}
 \title{Proyecto - Organización y Arquitectura de Computadoras}
 \hypersetup{
- pdfauthor={Castelan Hernandez Mario, Miranda Hernández Alejandro, Romero Andrade Cristian, Sánchez Brito Diego y Solano Morales Isaac Uriel},
+ pdfauthor={Brito Sánchez Diego, Castelan Hernandez Mario, Miranda Hernández Alejandro, Romero Andrade Cristian y Solano Morales Isaac Uriel},
  pdftitle={Proyecto - Organización y Arquitectura de Computadoras},
  pdfkeywords={},
  pdfsubject={},
@@ -55,7 +55,7 @@ Romero Andrade Cristian
 Solano Morales Isaac Uriel
 
 }\vfill{}
-{\large Grupo: 01\par{}}\vfill{}
+{\large Grupo: 02\par{}}\vfill{}
 {\large Profesor\\Ing.~Hugo Enrique Estrada León}\vfill{}
 \vfil{}
 {\large Semestre\\\textbf{2022--1}}
@@ -69,27 +69,27 @@ Solano Morales Isaac Uriel
 \tableofcontents
 
 \section{Objetivo}
-\label{sec:org3c5fd6a}
+\label{sec:org5588967}
 El alumno programará las instrucciones necesarias para poder ejecutar un algoritmo sobre una arquitectura de computadora  diseñada por el alumno.
 \subsection{Algoritmos}
-\label{sec:orgab166a6}
+\label{sec:orgd1258a1}
 Se debe elegir alguno de los algoritmos propuestos e implementar la o las instrucciones necesarias para llevarlo a cabo. Los modos de direccionamiento y la arquitectura son libres de elección.
 Si se elige la arquitectura RISC, se tendrá un pontaje extra en la calificación. En
 dado caso que para su algoritmo existan riesgos por dependencia de datos, estos
 se solucionarían vía software (agregando instrucciones \texttt{NOP}) y no por hardware.
 \subsection{Área de un octágono}
-\label{sec:org74b889f}
+\label{sec:org055d2a2}
 Se debe implementar el algoritmo que permita obtener el área de un octágono. Se usará la siguiente formula:
 \(A = \frac{perimetro \times apotema}{2}\)
 siendo el \(perimetro\) y el \(apotema\) números enteros.
 \section{Introducción}
-\label{sec:orgdc01b48}
+\label{sec:orgf77782e}
 \subsection{Arquitectura y organización de la computadora}
-\label{sec:org5ba59f6}
+\label{sec:org61da031}
 La arquitectura de la computadora hace referencia al conjunto de elementos del computador que son visibles desde el punto de vista del programador de ensamblador.
 La organización de la computadora se refiere a las unidades funcionales del computador y al modo como están interconectadas.
 \subsection{Arquitectura Von Neumann}
-\label{sec:org3e68225}
+\label{sec:org4a22984}
 El objetivo de la arquitectura Von Neumann es construir un sistema flexible que permita resolver diferentes tipos de problemas. Para conseguir esta flexibilidad, se construye un sistema de propósito general que se pueda programar para resolver los diferentes tipos de problemas. Para cada problema concreto se define un programa diferente.
 La arquitectura Von Neumann se basa en tres propiedades:
 \begin{enumerate}
@@ -98,7 +98,7 @@ La arquitectura Von Neumann se basa en tres propiedades:
 \item La ejecución de las instrucciones se produce de manera secuencial: después de ejecutar una instrucción se ejecuta la instrucción siguiente que hay en la memoria principal, pero se puede romper la secuencia de ejecución utilizando instrucciones de ruptura de secuencia.
 \end{enumerate}
 \subsection{Arquitectura Harvard}
-\label{sec:orgf84fd10}
+\label{sec:orgf02f5a2}
 La organización del computador según el modelo Harvard, básicamente, se distingue del modelo Von Neumann por la división de la memoria en una memoria de instrucciones y una memoria de datos, de manera que el procesador puede acceder separada y simultáneamente a las dos memorias.
 \begin{figure}[htbp]
 \centering
@@ -106,14 +106,14 @@ La organización del computador según el modelo Harvard, básicamente, se disti
 \caption{Arquitectura Harvard}
 \end{figure}
 \subsection{RISC: Reduced instruction set computer processor}
-\label{sec:orgbf665d7}
+\label{sec:org5875ef8}
 Es una arquitectura de procesadores basada en una colección de instrucciones simples y altamente personalizadas. RISC se construye para minimizar el tiempo de ejecución de una instrucción, optimizando y limitando el número de instrucciones. La arquitectura RISC tiene la capacidad de por cada ciclo de instrucción se da solo un ciclo de reloj. Cada ciclo debe contener cuatro etapas: buscar, decodificar, ejecutar y guardar.
 \subsection{CISC: complex instruction set computer}
-\label{sec:org7596041}
+\label{sec:orgcfad10b}
 CISC es un sistema de instrucciones desarrollado por Intel que requieren de mucho tiempo para ser ejecutadas completamente.
 Lo que sucede en CISC es que se reduce la cantidad de instrucciones de un software y se ignora el número de ciclos por instrucción. Se especializa en crear instrucciones complejas en el hardware, ya que el hardware siempre será mucho más rápido que el software.
 \section{Desarrollo}
-\label{sec:org06fb927}
+\label{sec:org45ccef1}
 Primeramente se diseñan las etapas de la arquitectura RISC, las cuales se dividen en cuatro:
 \begin{enumerate}
 \item Llamada a la instrucción
@@ -145,7 +145,7 @@ Se ve que los pasos son similares a los ejecutados en las cartas ASM para las in
 \caption{Etapas para la arquitectura segmentada del 68HC11}
 \end{figure}
 \subsection{Etapa 1}
-\label{sec:orgb7b968d}
+\label{sec:org417164d}
 En esta etapa tenemos contadores, incrementadores, multiplexores y memoria de instrucciones conectados entre sí \cite[p, 133]{SAVAGE}, arrojando su salida al registro de la PC y las instrucciones que serán tomadas posteriormente por la etapa 2.
 \begin{center}
 \includegraphics[width=0.6\linewidth]{./img/e1s.png}
@@ -157,7 +157,7 @@ En esta etapa tenemos contadores, incrementadores, multiplexores y memoria de in
 \caption{Etapa 1}
 \end{figure}
 \subsection{Etapa 2}
-\label{sec:org1155228}
+\label{sec:orga8af387}
 Luego tenemos la etapa 2 con los bloques que se muestran en la introducción, destacando los registros internos básicos, módulos de control, sumadores y registros de acoplamiento para
 poder ejecutar el pipeline, teniendo sus respectivas salidas para poder hacerlo\footnote{Se recomienda apreciar la arquitectura en Quartus descargando el proyecto como se explica en la \hyperref[sec:instalacion]{sección instalación}.}.
 \begin{center}
@@ -170,7 +170,7 @@ poder ejecutar el pipeline, teniendo sus respectivas salidas para poder hacerlo\
 \caption{Etapa 2}
 \end{figure}
 \subsection{Etapa 3}
-\label{sec:org722b530}
+\label{sec:orgb2d454c}
 Finalmente, la etapa 03\footnote{Ya que la etapa 04 es solo una salida o las banderas que se activan durante todo el proceso}, lo cual se hace directamente para poder simularlo de una buena manera en vhdl.
 Como podemos ver en esta etapa 03 tenemos la UPA y el generador de banderas, los cuales se muestran de forma independiente, cada uno con su bloque para poder controlarlo de mejor manera y poder mostrarlo en la simulación
 \begin{center}
@@ -188,34 +188,34 @@ Como podemos ver en esta etapa 03 tenemos la UPA y el generador de banderas, los
 \end{center}
 
 \subsection{Resolución del algoritmo}
-\label{sec:orgb691a9a}
+\label{sec:orgf36c073}
 Primeramente definimos el problema, es la división entre 2 de el producto de dos números.
 \subsubsection{División}
-\label{sec:org350904d}
-La división se puede simular haciendo que se recorra un bit a la derecha, por lo tanto, basándonos del set de instrucciones la instrucción perfecta es \texttt{ASRB}\footnote{Notación Mnemónico.} (\(0057\)\footnote{Instrucción.}) \cite[p. 24]{PM1999}, podemos implementarlo en RISC definiendo las siguientes señales de control:
+\label{sec:org5d40ad6}
+La división se puede simular haciendo que se recorra un bit a la derecha, por lo tanto, basándonos del set de instrucciones la instrucción perfecta es \texttt{ASRB}\footnote{Notación Mnemónico.} (\(0057\)\footnote{Instrucción.}) \cite[p. 24]{PM1999}, podemos implementarlo en RISC definiendo las siguientes señales de control\footnote{Se usa formato para las tablas, en código se varia de hexadecimal \texttt{x"\#\#"} y binario \texttt{"\#\#"}.}:
 \begin{table}[htbp]
 \caption{Señales de control de \texttt{ASRB} (\(0057\))}
 \centering
 \begin{tabular}{ll}
 \hline
-selregr & \texttt{5}\\
-sels1 & \texttt{0}\\
-sr & \texttt{1}\\
-cin & \texttt{0}\\
-sels2 & \texttt{0}\\
-seldato & \texttt{1}\\
-selsrc & \texttt{1}\\
-seldir & \texttt{0}\\
-selop & \texttt{7}\\
-selresult & \texttt{1}\\
-selc & \texttt{1}\\
-cadj & \texttt{0}\\
-selfalgs & \texttt{3}\\
-selbranch & \texttt{0}\\
-vf & \texttt{1}\\
-selregw & \texttt{4}\\
-memw & \texttt{0}\\
-seldirw & \texttt{0}\\
+\(SelRegR\) & \texttt{5}\\
+\(SelS1\) & \texttt{0}\\
+\(S/\bar{R}\) & \texttt{1}\\
+\(Cin\) & \texttt{0}\\
+\(SelS2\) & \texttt{0}\\
+\(SelDato\) & \texttt{1}\\
+\(SelSrc\) & \texttt{1}\\
+\(SelDir\) & \texttt{0}\\
+\(SelOp\) & \texttt{7}\\
+\(SelResult\) & \texttt{1}\\
+\(SelC\) & \texttt{1}\\
+\(Cadj\) & \texttt{0}\\
+\(SelFlags\) & \texttt{3}\\
+\(SelBranch\) & \texttt{0}\\
+\(VF\) & \texttt{1}\\
+\(SelRegW\) & \texttt{4}\\
+\(MemW\) & \texttt{0}\\
+\(SelDirW\) & \texttt{0}\\
 \hline
 \end{tabular}
 \end{table}
@@ -225,7 +225,7 @@ Por lo tanto, el fragmento en el archivo \texttt{u\_control.vhd} seria el siguie
 \inputminted[firstline=413, lastline=431]{vhdl}{../Risc/u_control.vhd}
 \end{code}
 \subsubsection{Multiplicación}
-\label{sec:orgb86238b}
+\label{sec:org7f6ef21}
 Tenemos dos opciones:, 1) realizar el módulo de multiplicación para la arquitectura en RISC y 2) realizar la multiplicación usando software. Se optó por usar software, por lo tanto definimos nuestro algoritmo en la cual nos basaremos para implementarlo en ensamblador y después pasarlo a memoria.
 \begin{algorithm}
 \caption{Algoritmo de multiplicación propuesto}
@@ -254,34 +254,34 @@ Teniendo este punto resuelto buscamos que instrucciones nos pueden servir\cite[p
  & Acceso & Acceso\\
  & Inmediato (\(0086\)) & Directo (\(0096\))\\
 \hline
-selregr & \texttt{0} & \texttt{0}\\
-sels1 & \texttt{0} & \texttt{0}\\
-sr & \texttt{1} & \texttt{1}\\
-cin & \texttt{0} & \texttt{0}\\
-sels2 & \texttt{0} & \texttt{0}\\
-seldato & \texttt{1} & \texttt{1}\\
-selsrc & \texttt{3} & \texttt{2}\\
-seldir & \texttt{0} & \texttt{1}\\
-selop & \texttt{4} & \texttt{4}\\
-selresult & \texttt{1} & \texttt{1}\\
-selc & \texttt{1} & \texttt{1}\\
-cadj & \texttt{0} & \texttt{0}\\
-selfalgs & \texttt{1} & \texttt{1}\\
-selbranch & \texttt{0} & \texttt{0}\\
-vf & \texttt{1} & \texttt{1}\\
-selregw & \texttt{1} & \texttt{1}\\
-memw & \texttt{0} & \texttt{0}\\
-seldirw & \texttt{0} & \texttt{0}\\
+\(SelRegR\) & \texttt{0} & \texttt{0}\\
+\(SelS1\) & \texttt{0} & \texttt{0}\\
+\(S/\bar{R}\) & \texttt{1} & \texttt{1}\\
+\(Cin\) & \texttt{0} & \texttt{0}\\
+\(SelS2\) & \texttt{0} & \texttt{0}\\
+\(SelDato\) & \texttt{1} & \texttt{1}\\
+\(SelSrc\) & \texttt{3} & \texttt{2}\\
+\(SelDir\) & \texttt{0} & \texttt{1}\\
+\(SelOp\) & \texttt{4} & \texttt{4}\\
+\(SelResult\) & \texttt{1} & \texttt{1}\\
+\(SelC\) & \texttt{1} & \texttt{1}\\
+\(Cadj\) & \texttt{0} & \texttt{0}\\
+\(SelFlags\) & \texttt{1} & \texttt{1}\\
+\(SelBranch\) & \texttt{0} & \texttt{0}\\
+\(VF\) & \texttt{1} & \texttt{1}\\
+\(SelRegW\) & \texttt{1} & \texttt{1}\\
+\(MemW\) & \texttt{0} & \texttt{0}\\
+\(SelDirW\) & \texttt{0} & \texttt{0}\\
 \hline
 \end{tabular}
 \end{table}
 \end{itemize}
 \begin{code}
-\caption{\texttt{LDAA} de acceso inmediato en \texttt{u\_control.vhd}}
+\caption{\texttt{LDAA} ($0086$) de acceso inmediato en \texttt{u\_control.vhd}}
 \inputminted[firstline=53, lastline=71]{vhdl}{../Risc/u_control.vhd}
 \end{code}
 \begin{code}
-\caption{\texttt{LDAA} de acceso directo en \texttt{u\_control.vhd}}
+\caption{\texttt{LDAA} ($0096$) de acceso directo en \texttt{u\_control.vhd}}
 \inputminted[firstline=93, lastline=111]{vhdl}{../Risc/u_control.vhd}
 \end{code}
 \begin{itemize}
@@ -292,30 +292,30 @@ Suma los contenidos de los registros acumuladores A y B. El resultado es guardad
 \centering
 \begin{tabular}{ll}
 \hline
-selregr & \texttt{4}\\
-sels1 & \texttt{1}\\
-sr & \texttt{1}\\
-cin & \texttt{0}\\
-sels2 & \texttt{0}\\
-seldato & \texttt{1}\\
-selsrc & \texttt{1}\\
-seldir & \texttt{0}\\
-selop & \texttt{4}\\
-selresult & \texttt{1}\\
-selc & \texttt{1}\\
-cadj & \texttt{0}\\
-selfalgs & \texttt{1}\\
-selbranch & \texttt{0}\\
-vf & \texttt{1}\\
-selregw & \texttt{0}\\
-memw & \texttt{1}\\
-seldirw & \texttt{2}\\
+\(SelRegR\) & \texttt{4}\\
+\(SelS1\) & \texttt{1}\\
+\(S/\bar{R}\) & \texttt{1}\\
+\(Cin\) & \texttt{0}\\
+\(SelS2\) & \texttt{0}\\
+\(SelDato\) & \texttt{1}\\
+\(SelSrc\) & \texttt{1}\\
+\(SelDir\) & \texttt{0}\\
+\(SelOp\) & \texttt{4}\\
+\(SelResult\) & \texttt{1}\\
+\(SelC\) & \texttt{1}\\
+\(Cadj\) & \texttt{0}\\
+\(SelFlags\) & \texttt{1}\\
+\(SelBranch\) & \texttt{0}\\
+\(VF\) & \texttt{1}\\
+\(SelRegW\) & \texttt{0}\\
+\(MemW\) & \texttt{1}\\
+\(SelDirW\) & \texttt{2}\\
 \hline
 \end{tabular}
 \end{table}
 \end{itemize}
 \begin{code}
-\caption{\texttt{STAA} en \texttt{u\_control.vhd}}
+\caption{\texttt{STAA} ($00B7$) en \texttt{u\_control.vhd}}
 \inputminted[firstline=133, lastline=151]{vhdl}{../Risc/u_control.vhd}
 \end{code}
 \begin{itemize}
@@ -332,33 +332,33 @@ seldirw & \texttt{2}\\
  & Acceso & Acceso\\
  & Inmediato (\(00C6\)) & Directo (\(00D6\))\\
 \hline
-selregr & \texttt{0} & \texttt{0}\\
-sels1 & \texttt{0} & \texttt{0}\\
-sr & \texttt{1} & \texttt{1}\\
-cin & \texttt{0} & \texttt{0}\\
-sels2 & \texttt{0} & \texttt{0}\\
-seldato & \texttt{1} & \texttt{1}\\
-selsrc & \texttt{3} & \texttt{2}\\
-seldir & \texttt{0} & \texttt{1}\\
-selop & \texttt{4} & \texttt{4}\\
-selresult & \texttt{1} & \texttt{1}\\
-selc & \texttt{1} & \texttt{1}\\
-cadj & \texttt{0} & \texttt{0}\\
-selfalgs & \texttt{1} & \texttt{1}\\
-selbranch & \texttt{0} & \texttt{0}\\
-vf & \texttt{1} & \texttt{1}\\
-selregw & \texttt{4} & \texttt{4}\\
-memw & \texttt{0} & \texttt{0}\\
-seldirw & \texttt{0} & \texttt{0}\\
+\(SelRegR\) & \texttt{0} & \texttt{0}\\
+\(SelS1\) & \texttt{0} & \texttt{0}\\
+\(S/\bar{R}\) & \texttt{1} & \texttt{1}\\
+\(Cin\) & \texttt{0} & \texttt{0}\\
+\(SelS2\) & \texttt{0} & \texttt{0}\\
+\(SelDato\) & \texttt{1} & \texttt{1}\\
+\(SelSrc\) & \texttt{3} & \texttt{2}\\
+\(SelDir\) & \texttt{0} & \texttt{1}\\
+\(SelOp\) & \texttt{4} & \texttt{4}\\
+\(SelResult\) & \texttt{1} & \texttt{1}\\
+\(SelC\) & \texttt{1} & \texttt{1}\\
+\(Cadj\) & \texttt{0} & \texttt{0}\\
+\(SelFlags\) & \texttt{1} & \texttt{1}\\
+\(SelBranch\) & \texttt{0} & \texttt{0}\\
+\(VF\) & \texttt{1} & \texttt{1}\\
+\(SelRegW\) & \texttt{4} & \texttt{4}\\
+\(MemW\) & \texttt{0} & \texttt{0}\\
+\(SelDirW\) & \texttt{0} & \texttt{0}\\
 \hline
 \end{tabular}
 \end{table}
 \begin{code}
-\caption{\texttt{LDAB} de acceso inmediato en \texttt{u\_control.vhd}}
+\caption{\texttt{LDAB} ($00C6$) de acceso inmediato en \texttt{u\_control.vhd}}
 \inputminted[firstline=73, lastline=91]{vhdl}{../Risc/u_control.vhd}
 \end{code}
 \begin{code}
-\caption{\texttt{LDAB} de acceso directo en \texttt{u\_control.vhd}}
+\caption{\texttt{LDAB} ($00D6$) de acceso directo en \texttt{u\_control.vhd}}
 \inputminted[firstline=113, lastline=131]{vhdl}{../Risc/u_control.vhd}
 \end{code}
 \item \texttt{CBA} (\(0011\))
@@ -368,29 +368,29 @@ Suma el acumulador A más el acumulador B y lo almacena en el acumulador A.
 \centering
 \begin{tabular}{ll}
 \hline
-selregr & \texttt{1}\\
-sels1 & \texttt{0}\\
-sr & \texttt{1}\\
-cin & \texttt{0}\\
-sels2 & \texttt{0}\\
-seldato & \texttt{1}\\
-selsrc & \texttt{1}\\
-seldir & \texttt{0}\\
-selop & \texttt{2}\\
-selresult & \texttt{0}\\
-selc & \texttt{1}\\
-cadj & \texttt{1}\\
-selfalgs & \texttt{3}\\
-selbranch & \texttt{0}\\
-vf & \texttt{1}\\
-selregw & \texttt{0}\\
-memw & \texttt{0}\\
-seldirw & \texttt{0}\\
+\(SelRegR\) & \texttt{1}\\
+\(SelS1\) & \texttt{0}\\
+\(S/\bar{R}\) & \texttt{1}\\
+\(Cin\) & \texttt{0}\\
+\(SelS2\) & \texttt{0}\\
+\(SelDato\) & \texttt{1}\\
+\(SelSrc\) & \texttt{1}\\
+\(SelDir\) & \texttt{0}\\
+\(SelOp\) & \texttt{2}\\
+\(SelResult\) & \texttt{0}\\
+\(SelC\) & \texttt{1}\\
+\(Cadj\) & \texttt{1}\\
+\(SelFlags\) & \texttt{3}\\
+\(SelBranch\) & \texttt{0}\\
+\(VF\) & \texttt{1}\\
+\(SelRegW\) & \texttt{0}\\
+\(MemW\) & \texttt{0}\\
+\(SelDirW\) & \texttt{0}\\
 \hline
 \end{tabular}
 \end{table}
 \begin{code}
-\caption{\texttt{CBA} en \texttt{u\_control.vhd}}
+\caption{\texttt{CBA} ($0011$) en \texttt{u\_control.vhd}}
 \inputminted[firstline=233, lastline=251]{vhdl}{../Risc/u_control.vhd}
 \end{code}
 \item \texttt{JMP} (\(007E\))
@@ -400,29 +400,29 @@ Salta a una instrucción de la memoria.
 \centering
 \begin{tabular}{ll}
 \hline
-selregr & \texttt{126}\\
-sels1 & \texttt{0}\\
-sr & \texttt{0}\\
-cin & \texttt{0}\\
-sels2 & \texttt{1}\\
-seldato & \texttt{1}\\
-selsrc & \texttt{3}\\
-seldir & \texttt{0}\\
-selop & \texttt{4}\\
-selresult & \texttt{1}\\
-selc & \texttt{0}\\
-cadj & \texttt{0}\\
-selfalgs & \texttt{0}\\
-selbranch & \texttt{0}\\
-vf & \texttt{0}\\
-selregw & \texttt{0}\\
-memw & \texttt{0}\\
-seldirw & \texttt{0}\\
+\(SelRegR\) & \texttt{126}\\
+\(SelS1\) & \texttt{0}\\
+\(S/\bar{R}\) & \texttt{0}\\
+\(Cin\) & \texttt{0}\\
+\(SelS2\) & \texttt{1}\\
+\(SelDato\) & \texttt{1}\\
+\(SelSrc\) & \texttt{3}\\
+\(SelDir\) & \texttt{0}\\
+\(SelOp\) & \texttt{4}\\
+\(SelResult\) & \texttt{1}\\
+\(SelC\) & \texttt{0}\\
+\(Cadj\) & \texttt{0}\\
+\(SelFlags\) & \texttt{0}\\
+\(SelBranch\) & \texttt{0}\\
+\(VF\) & \texttt{0}\\
+\(SelRegW\) & \texttt{0}\\
+\(MemW\) & \texttt{0}\\
+\(SelDirW\) & \texttt{0}\\
 \hline
 \end{tabular}
 \end{table}
 \begin{code}
-\caption{\texttt{CBA} en \texttt{u\_control.vhd}}
+\caption{\texttt{JMP} ($007E$) en \texttt{u\_control.vhd}}
 \inputminted[firstline=253, lastline=271]{vhdl}{../Risc/u_control.vhd}
 \end{code}
 \end{itemize}
@@ -471,33 +471,65 @@ Teniendo el código ensamblador de referencia escribimos en memoria (\texttt{mem
 Se añadieron instrucciones \texttt{NOP} para resolver el problema de la dependencia de datos, evitando así diversos retrasos e inconsistencias.
 
 \section{Resultado}
-\label{sec:orge7f67d7}
+\label{sec:org3b4b5c3}
+\subsection{Prueba}
+\label{sec:orgc62edc6}
 Ahora seguimos las instrucciones de la sección \ref{sec:uso} para ejecutar el algoritmo implementado en una arquitectura RISC.
+\begin{center}
+\includegraphics[width=.9\linewidth]{../img/7.png}
+\captionof{figure}{Resultado de \(\frac{6 \times 8}{2}\)}
+\end{center}
+\subsection{Octagono ``Real''}
+\label{sec:org78e62b4}
+Se propone un octágono, con valores enteros de un perimetro a \(40[u]\) y un apotema de \(6[u]\),  donde su área resultante seria \(120\) (En la \hyperref[fig:geo51x7]{siguiente figura} se muestra un trazo ``real'' usando geogebra).
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=.9\linewidth]{../img/7.png}
-\caption{Resultado de \(\frac{6 \times 8}{2}\)}
+\includegraphics[width=.9\linewidth]{./img/geo40x6.png}
+\caption{\label{fig:geo51x7}Octágono en Geogebra: \(perimetro = 40\) y \(apotema \approx 6\)}
 \end{figure}
+Modificamos los valores de entrada del archivo \texttt{memoria\_inst.vhd}
+\begin{minted}[,fontsize=\scriptsize]{vhdl}
+  -- Resto de código
+  memoria(0) <= x"00860028"; -- A=40 declaracion a  <<== VALOR DE ENTRADA
+  memoria(1) <= x"00010000"; --
+  memoria(2) <= x"00B70002"; -- M2 = 6
+  memoria(3) <= x"00010000"; --  Fin declaracion a
+  memoria(4) <= x"00010000"; --
+  memoria(5) <= x"00860006"; -- A=6 declaracion b  <<== VALOR DE ENTRADA
+  -- El resto del código
+\end{minted}
+Compilamos y simulamos
+Donde apreciamos que el valor del área en geogebra es cercano a nuestros resultados
+\[ A_{geogebra} = \frac{40 \times 6.03}{2} = 120.71 \]
+\[ A_{quartus} = \frac{40 \times 6}{2} = 120 \]
+\begin{center}
+\includegraphics[width=.9\linewidth]{./img/40x6.png}
+\captionof{figure}{Simulación de: \(perimetro = 40\) y \(apotema \approx 6\)}
+\end{center}
 \section{Conclusiones}
-\label{sec:org213234e}
+\label{sec:org51f3083}
 \subsubsection{Brito Sánchez Diego}
-\label{sec:orgc3ea57f}
+\label{sec:orgc9ae534}
 Con el desarrollo de este proyecto pusimos en práctica todo lo aprendido a lo largo del curso, tanto teórico como práctico, donde se logró implementar una arquitectura RISC y sobre ella desarrollar las instrucciones necesarias para obtener el algoritmo que calcula el área de un octágono, por lo que podemos decir que se logró el objetivo de este proyecto, ya que comprendimos el funcionamiento de esta arquitectura y como se mostró en las simulaciones también nuestro algoritmo funcionó como se esperaba.
+
 \subsubsection{Castelan Hernandez Mario}
-\label{sec:org9a76aee}
+\label{sec:org08c3ad1}
 Se logró cumplir el objetivo, ya que implementamos las instrucciones necesarias para ejecutar el algoritmo del área de un octágono en una arquitectura RISC que desarrollamos en el laboratorio, además pusimos en práctica los conocimientos adquiridos durante el semestre para poder entender como funciona esta arquitectura y poder desarrollar el programa en ensamblador que realiza el algoritmo
+
 \subsubsection{Miranda Hernández Alejandro}
-\label{sec:orgc6ce20b}
+\label{sec:org3833eae}
 En este proyecto pusimos en práctica lo aprendido en teoría acerca de la arquitectura RISC, como se dividen sus instrucciones en 4 etapas. Se compararon las arquitecturas RISC y CISC, y se observó como una arquitectura RISC puede ejecutar instrucciones en paralelo al ser estas divididas en etapas, mientras que la arquitectura CISC las ejecuta secuencialmente. Por último, se observó que únicamente la arquitectura RISC puede tener errores por dependencia de datos, y estos tienen que ser solventados mediante hardware o software.
 También comprendimos el funcionamiento de la arquitectura RISC del Motorola 68HC11. Se diseñaron los esquemas correspondientes para instrucciones de multiplicación y de división, posteriormente se configuraron las señales correspondientes en un archivo de Excel. Finalmente se agregaron a la memoria en su archivo VHDL.
 Después se busco modificar la memoria RAM de instrucciones, para crear una secuencia que nos permitiera calcular el área de un octágono, a partir de que nos proporcionaran su perímetro y su apotema. Por todo lo anteriormente menciona se puede afirmar que se cumplió el objetivo del proyecto.
+
+
 \subsubsection{Romero Andrade Cristian}
-\label{sec:org85c6669}
+\label{sec:orgd2c772b}
 Se desarrolló la arquitectura Risc, donde se puede observar que la ejecución de cada instrucción es paralela, esto conlleva a una velocidad de procesamiento considerable en comparación a otras arquitecturas. sin embargo esta contiene un problema ya que tiene una dependencia de datos para cada instrucción y puede causar retrasos e inconsistencias, sin embargo esta se puede solucionar usando la operación NOP (el la práctica estas interrupciones se encarga el compilador o bien ya esta resuelta por hardware).
 \section{Manual de usuario}
-\label{sec:orgd3665fc}
+\label{sec:org9226fb9}
 \subsection{Prerrequisitos}
-\label{sec:org7839e0a}
+\label{sec:org585bdd5}
 \begin{itemize}
 \item Contar con Git instalado en su sistema operativo (Opcional)
 \item Contar con alguno de los siguiente sistemas operativos:
@@ -536,7 +568,7 @@ Intel Advanced Link Analyzer & \(9[GB]\)\\
 \end{table}
 \end{itemize}
 \subsection{Instalación\label{sec:instalacion}}
-\label{sec:orgaf87f38}
+\label{sec:org17411e3}
 Descargar o clonar el repositorio de \href{https://github.com/tysyak/OyAC\_Proyecto\_20221}{Github}: \href{https://github.com/tysyak/OyAC\_Proyecto\_20221}{\texttt{github.com/tysyak/OyAC\_Proyecto\_20221}}
 \begin{figure}[htbp]
 \centering
@@ -544,7 +576,7 @@ Descargar o clonar el repositorio de \href{https://github.com/tysyak/OyAC\_Proye
 \caption{Repositorio del proyecto}
 \end{figure}
 \subsection{Uso\label{sec:uso}}
-\label{sec:orgcdba1e8}
+\label{sec:org37d04b8}
 \begin{enumerate}
 \item Abrir Quartus Prime\footnote{A partir Quartus v21.1 modelsim es sustituido, por lo tanto la solución en la simulación vista en el presente solo sirve para versiones anteriores a 21.1}
 \item En el menú File seleccionar abrir proyecto o presionar \texttt{Control + J}
@@ -592,7 +624,7 @@ Descargar o clonar el repositorio de \href{https://github.com/tysyak/OyAC\_Proye
 \includegraphics[width=0.6\linewidth]{./img/sim6.png}
 \end{center}
 \item Asignar un periodo de 5.0 y dar click sobre 'OK'.
-\item Seleccionar RESET y dar click sobre el botón 'Forcing High (1)', mostrado en la parte superior de la imagen
+\item Seleccionar RESET y dar click sobre el botón 'For\$Cin\$g High (1)', mostrado en la parte superior de la imagen
 \begin{center}
 \includegraphics[width=0.6\linewidth]{./img/sim7.png}
 \end{center}
@@ -611,10 +643,10 @@ Descargar o clonar el repositorio de \href{https://github.com/tysyak/OyAC\_Proye
 \end{enumerate}
 
 \section{Referencias}
-\label{sec:orga16078a}
+\label{sec:orgc10d1b4}
 \nocite{*}
 \printbibliography{}
-
+\newpage
 \listoffigures{}
 \listoftables{}
 \listoflistings{}

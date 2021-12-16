@@ -1,5 +1,5 @@
- #+TITLE: Proyecto - Organización y Arquitectura de Computadoras
-#+author: Castelan Hernandez Mario, Miranda Hernández Alejandro, Romero Andrade Cristian, Sánchez Brito Diego y Solano Morales Isaac Uriel
+#+TITLE: Proyecto - Organización y Arquitectura de Computadoras
+#+author: Brito Sánchez Diego, Castelan Hernandez Mario, Miranda Hernández Alejandro, Romero Andrade Cristian y Solano Morales Isaac Uriel
 #+options: toc:nil title:nil
 #+language: es
 #+latex_compiler: lualatex
@@ -26,7 +26,7 @@ Romero Andrade Cristian
 Solano Morales Isaac Uriel
 
 #+latex: }\vfill{}
-#+latex: {\large Grupo: 01\par{}}\vfill{}
+#+latex: {\large Grupo: 02\par{}}\vfill{}
 #+latex: {\large Profesor\\Ing.~Hugo Enrique Estrada León}\vfill{}
 #+latex: \vfil{}
 #+latex: {\large Semestre\\\textbf{2022--1}}
@@ -121,28 +121,28 @@ Como podemos ver en esta etapa 03 tenemos la UPA y el generador de banderas, los
 ** Resolución del algoritmo
 Primeramente definimos el problema, es la división entre 2 de el producto de dos números.
 *** División
-La división se puede simular haciendo que se recorra un bit a la derecha, por lo tanto, basándonos del set de instrucciones la instrucción perfecta es =ASRB=[fn:3] ($0057$[fn:4]) \cite[p. 24]{PM1999}, podemos implementarlo en RISC definiendo las siguientes señales de control:
+La división se puede simular haciendo que se recorra un bit a la derecha, por lo tanto, basándonos del set de instrucciones la instrucción perfecta es =ASRB=[fn:3] ($0057$[fn:4]) \cite[p. 24]{PM1999}, podemos implementarlo en RISC definiendo las siguientes señales de control[fn:6]:
 #+caption: Señales de control de =ASRB= ($0057$)
-|-----------+-----|
-| selregr   | =5= |
-| sels1     | =0= |
-| sr        | =1= |
-| cin       | =0= |
-| sels2     | =0= |
-| seldato   | =1= |
-| selsrc    | =1= |
-| seldir    | =0= |
-| selop     | =7= |
-| selresult | =1= |
-| selc      | =1= |
-| cadj      | =0= |
-| selfalgs  | =3= |
-| selbranch | =0= |
-| vf        | =1= |
-| selregw   | =4= |
-| memw      | =0= |
-| seldirw   | =0= |
-|-----------+-----|
+|-------------+-----|
+| $SelRegR$   | =5= |
+| $SelS1$     | =0= |
+| $S/\bar{R}$ | =1= |
+| $Cin$       | =0= |
+| $SelS2$     | =0= |
+| $SelDato$   | =1= |
+| $SelSrc$    | =1= |
+| $SelDir$    | =0= |
+| $SelOp$     | =7= |
+| $SelResult$ | =1= |
+| $SelC$      | =1= |
+| $Cadj$      | =0= |
+| $SelFlags$  | =3= |
+| $SelBranch$ | =0= |
+| $VF$        | =1= |
+| $SelRegW$   | =4= |
+| $MemW$      | =0= |
+| $SelDirW$   | =0= |
+|-------------+-----|
 Por lo tanto, el fragmento en el archivo =u_control.vhd= seria el siguiente:
 \begin{code}
 \caption{\texttt{ASRB} en \texttt{u\_control.vhd}}
@@ -167,151 +167,151 @@ Teniendo este punto resuelto buscamos que instrucciones nos pueden servir\cite[p
   + Acceso Inmediato: Carga en el registro ACCA un dato inmediato de 16 bits contenido en memoria.
   + Acceso Directo: Carga en el acumulador A, un dato inmediato de 8 bits contenido en memoria.
   #+caption: LDAA
-  |-----------+---------------------------+------------------|
-  |           | Acceso                    | Acceso           |
-  |           | Inmediato ($0086$)  | Directo ($0096$) |
-  |-----------+---------------------------+------------------|
-  | selregr   | =0=                       | =0=              |
-  | sels1     | =0=                       | =0=              |
-  | sr        | =1=                       | =1=              |
-  | cin       | =0=                       | =0=              |
-  | sels2     | =0=                       | =0=              |
-  | seldato   | =1=                       | =1=              |
-  | selsrc    | =3=                       | =2=              |
-  | seldir    | =0=                       | =1=              |
-  | selop     | =4=                       | =4=              |
-  | selresult | =1=                       | =1=              |
-  | selc      | =1=                       | =1=              |
-  | cadj      | =0=                       | =0=              |
-  | selfalgs  | =1=                       | =1=              |
-  | selbranch | =0=                       | =0=              |
-  | vf        | =1=                       | =1=              |
-  | selregw   | =1=                       | =1=              |
-  | memw      | =0=                       | =0=              |
-  | seldirw   | =0=                       | =0=              |
-  |-----------+---------------------------+------------------|
+  |-------------+--------------------+------------------|
+  |             | Acceso             | Acceso           |
+  |             | Inmediato ($0086$) | Directo ($0096$) |
+  |-------------+--------------------+------------------|
+  | $SelRegR$   | =0=                | =0=              |
+  | $SelS1$     | =0=                | =0=              |
+  | $S/\bar{R}$ | =1=                | =1=              |
+  | $Cin$       | =0=                | =0=              |
+  | $SelS2$     | =0=                | =0=              |
+  | $SelDato$   | =1=                | =1=              |
+  | $SelSrc$    | =3=                | =2=              |
+  | $SelDir$    | =0=                | =1=              |
+  | $SelOp$     | =4=                | =4=              |
+  | $SelResult$ | =1=                | =1=              |
+  | $SelC$      | =1=                | =1=              |
+  | $Cadj$      | =0=                | =0=              |
+  | $SelFlags$  | =1=                | =1=              |
+  | $SelBranch$ | =0=                | =0=              |
+  | $VF$        | =1=                | =1=              |
+  | $SelRegW$   | =1=                | =1=              |
+  | $MemW$      | =0=                | =0=              |
+  | $SelDirW$   | =0=                | =0=              |
+  |-------------+--------------------+------------------|
 \begin{code}
-\caption{\texttt{LDAA} de acceso inmediato en \texttt{u\_control.vhd}}
+\caption{\texttt{LDAA} ($0086$) de acceso inmediato en \texttt{u\_control.vhd}}
 \inputminted[firstline=53, lastline=71]{vhdl}{../Risc/u_control.vhd}
 \end{code}
 \begin{code}
-\caption{\texttt{LDAA} de acceso directo en \texttt{u\_control.vhd}}
+\caption{\texttt{LDAA} ($0096$) de acceso directo en \texttt{u\_control.vhd}}
 \inputminted[firstline=93, lastline=111]{vhdl}{../Risc/u_control.vhd}
 \end{code}
 + =STAA=
   Suma los contenidos de los registros acumuladores A y B. El resultado es guardado en el acumulador A.
   #+caption: =STAA= ($00B7$)
-  |-----------+-----|
-  | selregr   | =4= |
-  | sels1     | =1= |
-  | sr        | =1= |
-  | cin       | =0= |
-  | sels2     | =0= |
-  | seldato   | =1= |
-  | selsrc    | =1= |
-  | seldir    | =0= |
-  | selop     | =4= |
-  | selresult | =1= |
-  | selc      | =1= |
-  | cadj      | =0= |
-  | selfalgs  | =1= |
-  | selbranch | =0= |
-  | vf        | =1= |
-  | selregw   | =0= |
-  | memw      | =1= |
-  | seldirw   | =2= |
-  |-----------+-----|
+  |-------------+-----|
+  | $SelRegR$   | =4= |
+  | $SelS1$     | =1= |
+  | $S/\bar{R}$ | =1= |
+  | $Cin$       | =0= |
+  | $SelS2$     | =0= |
+  | $SelDato$   | =1= |
+  | $SelSrc$    | =1= |
+  | $SelDir$    | =0= |
+  | $SelOp$     | =4= |
+  | $SelResult$ | =1= |
+  | $SelC$      | =1= |
+  | $Cadj$      | =0= |
+  | $SelFlags$  | =1= |
+  | $SelBranch$ | =0= |
+  | $VF$        | =1= |
+  | $SelRegW$   | =0= |
+  | $MemW$      | =1= |
+  | $SelDirW$   | =2= |
+  |-------------+-----|
 \begin{code}
-\caption{\texttt{STAA} en \texttt{u\_control.vhd}}
+\caption{\texttt{STAA} ($00B7$) en \texttt{u\_control.vhd}}
 \inputminted[firstline=133, lastline=151]{vhdl}{../Risc/u_control.vhd}
 \end{code}
 + =LDAB=
   + Acceso Inmediato: Carga en el registro ACCB un dato inmediato de 16 bits contenido en memoria.
   + Acceso Directo: Carga en el acumulador B, un dato inmediato de 8 bits contenido en memoria.
   #+CAPTION: =LDAB=
-  |-----------+--------------------+------------------|
-  |           | Acceso             | Acceso           |
-  |           | Inmediato ($00C6$) | Directo ($00D6$) |
-  |-----------+--------------------+------------------|
-  | selregr   | =0=                | =0=              |
-  | sels1     | =0=                | =0=              |
-  | sr        | =1=                | =1=              |
-  | cin       | =0=                | =0=              |
-  | sels2     | =0=                | =0=              |
-  | seldato   | =1=                | =1=              |
-  | selsrc    | =3=                | =2=              |
-  | seldir    | =0=                | =1=              |
-  | selop     | =4=                | =4=              |
-  | selresult | =1=                | =1=              |
-  | selc      | =1=                | =1=              |
-  | cadj      | =0=                | =0=              |
-  | selfalgs  | =1=                | =1=              |
-  | selbranch | =0=                | =0=              |
-  | vf        | =1=                | =1=              |
-  | selregw   | =4=                | =4=              |
-  | memw      | =0=                | =0=              |
-  | seldirw   | =0=                | =0=              |
-  |-----------+--------------------+------------------|
+  |-------------+--------------------+------------------|
+  |             | Acceso             | Acceso           |
+  |             | Inmediato ($00C6$) | Directo ($00D6$) |
+  |-------------+--------------------+------------------|
+  | $SelRegR$   | =0=                | =0=              |
+  | $SelS1$     | =0=                | =0=              |
+  | $S/\bar{R}$ | =1=                | =1=              |
+  | $Cin$       | =0=                | =0=              |
+  | $SelS2$     | =0=                | =0=              |
+  | $SelDato$   | =1=                | =1=              |
+  | $SelSrc$    | =3=                | =2=              |
+  | $SelDir$    | =0=                | =1=              |
+  | $SelOp$     | =4=                | =4=              |
+  | $SelResult$ | =1=                | =1=              |
+  | $SelC$      | =1=                | =1=              |
+  | $Cadj$      | =0=                | =0=              |
+  | $SelFlags$  | =1=                | =1=              |
+  | $SelBranch$ | =0=                | =0=              |
+  | $VF$        | =1=                | =1=              |
+  | $SelRegW$   | =4=                | =4=              |
+  | $MemW$      | =0=                | =0=              |
+  | $SelDirW$   | =0=                | =0=              |
+  |-------------+--------------------+------------------|
   \begin{code}
-  \caption{\texttt{LDAB} de acceso inmediato en \texttt{u\_control.vhd}}
+  \caption{\texttt{LDAB} ($00C6$) de acceso inmediato en \texttt{u\_control.vhd}}
   \inputminted[firstline=73, lastline=91]{vhdl}{../Risc/u_control.vhd}
   \end{code}
   \begin{code}
-  \caption{\texttt{LDAB} de acceso directo en \texttt{u\_control.vhd}}
+  \caption{\texttt{LDAB} ($00D6$) de acceso directo en \texttt{u\_control.vhd}}
   \inputminted[firstline=113, lastline=131]{vhdl}{../Risc/u_control.vhd}
   \end{code}
 + =CBA= ($0011$)
   Suma el acumulador A más el acumulador B y lo almacena en el acumulador A.
   #+caption: =CBA=
-  |-----------+-----|
-  | selregr   | =1= |
-  | sels1     | =0= |
-  | sr        | =1= |
-  | cin       | =0= |
-  | sels2     | =0= |
-  | seldato   | =1= |
-  | selsrc    | =1= |
-  | seldir    | =0= |
-  | selop     | =2= |
-  | selresult | =0= |
-  | selc      | =1= |
-  | cadj      | =1= |
-  | selfalgs  | =3= |
-  | selbranch | =0= |
-  | vf        | =1= |
-  | selregw   | =0= |
-  | memw      | =0= |
-  | seldirw   | =0= |
-  |-----------+-----|
+  |-------------+-----|
+  | $SelRegR$   | =1= |
+  | $SelS1$     | =0= |
+  | $S/\bar{R}$ | =1= |
+  | $Cin$       | =0= |
+  | $SelS2$     | =0= |
+  | $SelDato$   | =1= |
+  | $SelSrc$    | =1= |
+  | $SelDir$    | =0= |
+  | $SelOp$     | =2= |
+  | $SelResult$ | =0= |
+  | $SelC$      | =1= |
+  | $Cadj$      | =1= |
+  | $SelFlags$  | =3= |
+  | $SelBranch$ | =0= |
+  | $VF$        | =1= |
+  | $SelRegW$   | =0= |
+  | $MemW$      | =0= |
+  | $SelDirW$   | =0= |
+  |-------------+-----|
   \begin{code}
-  \caption{\texttt{CBA} en \texttt{u\_control.vhd}}
+  \caption{\texttt{CBA} ($0011$) en \texttt{u\_control.vhd}}
   \inputminted[firstline=233, lastline=251]{vhdl}{../Risc/u_control.vhd}
   \end{code}
 + =JMP= ($007E$)
   Salta a una instrucción de la memoria.
   #+caption: =JMP=
-  |-----------+-------|
-  | selregr   | =126= |
-  | sels1     | =0=   |
-  | sr        | =0=   |
-  | cin       | =0=   |
-  | sels2     | =1=   |
-  | seldato   | =1=   |
-  | selsrc    | =3=   |
-  | seldir    | =0=   |
-  | selop     | =4=   |
-  | selresult | =1=   |
-  | selc      | =0=   |
-  | cadj      | =0=   |
-  | selfalgs  | =0=   |
-  | selbranch | =0=   |
-  | vf        | =0=   |
-  | selregw   | =0=   |
-  | memw      | =0=   |
-  | seldirw   | =0=   |
-  |-----------+-------|
+  |-------------+-------|
+  | $SelRegR$   | =126= |
+  | $SelS1$     | =0=   |
+  | $S/\bar{R}$ | =0=   |
+  | $Cin$       | =0=   |
+  | $SelS2$     | =1=   |
+  | $SelDato$   | =1=   |
+  | $SelSrc$    | =3=   |
+  | $SelDir$    | =0=   |
+  | $SelOp$     | =4=   |
+  | $SelResult$ | =1=   |
+  | $SelC$      | =0=   |
+  | $Cadj$      | =0=   |
+  | $SelFlags$  | =0=   |
+  | $SelBranch$ | =0=   |
+  | $VF$        | =0=   |
+  | $SelRegW$   | =0=   |
+  | $MemW$      | =0=   |
+  | $SelDirW$   | =0=   |
+  |-------------+-------|
   \begin{code}
-  \caption{\texttt{CBA} en \texttt{u\_control.vhd}}
+  \caption{\texttt{JMP} ($007E$) en \texttt{u\_control.vhd}}
   \inputminted[firstline=253, lastline=271]{vhdl}{../Risc/u_control.vhd}
   \end{code}
 
@@ -359,18 +359,48 @@ Teniendo el código ensamblador de referencia escribimos en memoria (=memoria_in
 Se añadieron instrucciones =NOP= para resolver el problema de la dependencia de datos, evitando así diversos retrasos e inconsistencias.
 
 * Resultado
+** Prueba
 Ahora seguimos las instrucciones de la sección \ref{sec:uso} para ejecutar el algoritmo implementado en una arquitectura RISC.
+   #+ATTR_LATEX: :float nil
 #+caption: Resultado de $\frac{6 \times 8}{2}$
 [[../img/7.png]]
+** Octagono ``Real''
+Se propone un octágono, con valores enteros de un perimetro a $40[u]$ y un apotema de $6[u]$,  donde su área resultante seria $120$ (En la [[fig:geo51x7][siguiente figura]] se muestra un trazo ``real'' usando geogebra).
+#+label: fig:geo51x7
+#+caption: Octágono en Geogebra: $perimetro = 40$ y $apotema \approx 6$
+[[./img/geo40x6.png]]
+Modificamos los valores de entrada del archivo =memoria_inst.vhd=
+#+ATTR_LATEX: :options fontsize=\scriptsize
+#+begin_src vhdl
+  -- Resto de código
+  memoria(0) <= x"00860028"; -- A=40 declaracion a  <<== VALOR DE ENTRADA
+  memoria(1) <= x"00010000"; --
+  memoria(2) <= x"00B70002"; -- M2 = 6
+  memoria(3) <= x"00010000"; --  Fin declaracion a
+  memoria(4) <= x"00010000"; --
+  memoria(5) <= x"00860006"; -- A=6 declaracion b  <<== VALOR DE ENTRADA
+  -- El resto del código
+#+end_src
+Compilamos y simulamos
+#+ATTR_LATEX: :float nil
+#+caption: Simulación de: $perimetro = 40$ y $apotema \approx 6$
+Donde apreciamos que el valor del área en geogebra es cercano a nuestros resultados
+\[ A_{geogebra} = \frac{40 \times 6.03}{2} = 120.71 \]
+\[ A_{quartus} = \frac{40 \times 6}{2} = 120 \]
+[[./img/40x6.png]]
 * Conclusiones
 *** Brito Sánchez Diego
 Con el desarrollo de este proyecto pusimos en práctica todo lo aprendido a lo largo del curso, tanto teórico como práctico, donde se logró implementar una arquitectura RISC y sobre ella desarrollar las instrucciones necesarias para obtener el algoritmo que calcula el área de un octágono, por lo que podemos decir que se logró el objetivo de este proyecto, ya que comprendimos el funcionamiento de esta arquitectura y como se mostró en las simulaciones también nuestro algoritmo funcionó como se esperaba.
+
 *** Castelan Hernandez Mario
 Se logró cumplir el objetivo, ya que implementamos las instrucciones necesarias para ejecutar el algoritmo del área de un octágono en una arquitectura RISC que desarrollamos en el laboratorio, además pusimos en práctica los conocimientos adquiridos durante el semestre para poder entender como funciona esta arquitectura y poder desarrollar el programa en ensamblador que realiza el algoritmo
+
 *** Miranda Hernández Alejandro
 En este proyecto pusimos en práctica lo aprendido en teoría acerca de la arquitectura RISC, como se dividen sus instrucciones en 4 etapas. Se compararon las arquitecturas RISC y CISC, y se observó como una arquitectura RISC puede ejecutar instrucciones en paralelo al ser estas divididas en etapas, mientras que la arquitectura CISC las ejecuta secuencialmente. Por último, se observó que únicamente la arquitectura RISC puede tener errores por dependencia de datos, y estos tienen que ser solventados mediante hardware o software.
 También comprendimos el funcionamiento de la arquitectura RISC del Motorola 68HC11. Se diseñaron los esquemas correspondientes para instrucciones de multiplicación y de división, posteriormente se configuraron las señales correspondientes en un archivo de Excel. Finalmente se agregaron a la memoria en su archivo VHDL.
 Después se busco modificar la memoria RAM de instrucciones, para crear una secuencia que nos permitiera calcular el área de un octágono, a partir de que nos proporcionaran su perímetro y su apotema. Por todo lo anteriormente menciona se puede afirmar que se cumplió el objetivo del proyecto.
+
+
 *** Romero Andrade Cristian
 Se desarrolló la arquitectura Risc, donde se puede observar que la ejecución de cada instrucción es paralela, esto conlleva a una velocidad de procesamiento considerable en comparación a otras arquitecturas. sin embargo esta contiene un problema ya que tiene una dependencia de datos para cada instrucción y puede causar retrasos e inconsistencias, sin embargo esta se puede solucionar usando la operación NOP (el la práctica estas interrupciones se encarga el compilador o bien ya esta resuelta por hardware).
 * Manual de usuario
@@ -443,7 +473,7 @@ Descargar o clonar el repositorio de [[https://github.com/tysyak/OyAC_Proyecto_2
     #+ATTR_LATEX: :float nil :width 0.6\linewidth
     [[./img/sim6.png]]
 13. Asignar un periodo de 5.0 y dar click sobre 'OK'.
-14. Seleccionar RESET y dar click sobre el botón 'Forcing High (1)', mostrado en la parte superior de la imagen
+14. Seleccionar RESET y dar click sobre el botón 'For$Cin$g High (1)', mostrado en la parte superior de la imagen
     #+ATTR_LATEX: :float nil :width 0.6\linewidth
     [[./img/sim7.png]]
 15. Seleccionar del menú /Simulation Settings/
@@ -459,12 +489,13 @@ Descargar o clonar el repositorio de [[https://github.com/tysyak/OyAC_Proyecto_2
 * Referencias
 \nocite{*}
 #+latex: \printbibliography{}
-
+\newpage
 #+latex: \listoffigures{}
 #+latex: \listoftables{}
 #+latex: \listoflistings{}
 
 * Footnotes
+[fn:6]Se usa formato para las tablas, en código se varia de hexadecimal =x"##"= y binario ="##"=.
 
 [fn:5]A partir Quartus v21.1 modelsim es sustituido, por lo tanto la solución en la simulación vista en el presente solo sirve para versiones anteriores a 21.1
 
