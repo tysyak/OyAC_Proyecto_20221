@@ -403,6 +403,9 @@ Después se busco modificar la memoria RAM de instrucciones, para crear una secu
 
 *** Romero Andrade Cristian
 Se desarrolló la arquitectura Risc, donde se puede observar que la ejecución de cada instrucción es paralela, esto conlleva a una velocidad de procesamiento considerable en comparación a otras arquitecturas. sin embargo esta contiene un problema ya que tiene una dependencia de datos para cada instrucción y puede causar retrasos e inconsistencias, sin embargo esta se puede solucionar usando la operación NOP (el la práctica estas interrupciones se encarga el compilador o bien ya esta resuelta por hardware).
+
+*** Solano Morales Isaac Uriel
+En esta proyecto comprendí el funcionamiento de la arquitectura RISC vista en teoría. Analizamos la arquitectura del microprocesador para implementar las operaciones necesarias y verificamos su correcto funcionamiento para utilizarlas más adelante. En el software Quartus y con la tabla de verdad grabamos el contenido de memoria para el microprocesador utilizando las señales correspondientes para cada instrucción y finalmente simulamos el programa completo para obtener el área de un octágono con ayuda de un archivo Waveform donde verificamos el correcto funcionamiento del microprocesador y del algoritmo diseñado, por lo cual puedo decir que se cumplido el objetivo del proyecto construyendo un microprocesador RISC funcional capas de ejecutar el algoritmo diseñado por nosotros mismos para el calculo del área de un octágono.
 * Manual de usuario
 ** Prerrequisitos
 + Contar con Git instalado en su sistema operativo (Opcional)
