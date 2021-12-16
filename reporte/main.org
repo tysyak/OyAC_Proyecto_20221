@@ -476,7 +476,7 @@ Descargar o clonar el repositorio de [[https://github.com/tysyak/OyAC_Proyecto_2
     #+ATTR_LATEX: :float nil :width 0.6\linewidth
     [[./img/sim6.png]]
 13. Asignar un periodo de 5.0 y dar click sobre 'OK'.
-14. Seleccionar RESET y dar click sobre el botón 'For$Cin$g High (1)', mostrado en la parte superior de la imagen
+14. Seleccionar RESET y dar click sobre el botón 'Forcing High (1)', mostrado en la parte superior de la imagen
     #+ATTR_LATEX: :float nil :width 0.6\linewidth
     [[./img/sim7.png]]
 15. Seleccionar del menú /Simulation Settings/
