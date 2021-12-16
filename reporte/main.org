@@ -158,7 +158,7 @@ $b \gets apotema$\;
 $suma\_auxiliar \gets a$\;
 $i \gets 0$\;
 \While{$i \neq b$}{
-  $suma\_auxiliar \gets suma\_auxiliar \times a$\;
+  $suma\_auxiliar \gets suma\_auxiliar + a$\;
   $i \gets i + 1$\;
 }
 \end{algorithm}
@@ -360,7 +360,7 @@ Se añadieron instrucciónes =NOP= para resolver el problema de la dependencia d
 
 * Resultado
 Ahora seguimos las instrucciónes de la sección \ref{sec:uso} para ejecutar el algoritmo implementado en una arquitectura RISC.
-#+caption: Resultados
+#+caption: Resultado de $\frac{6 \times 8}{2}$
 [[../img/7.png]]
 * Conclusiones
 *** Castelan Hernandez Mario
