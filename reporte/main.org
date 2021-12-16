@@ -364,7 +364,7 @@ Ahora seguimos las instrucciones de la sección \ref{sec:uso} para ejecutar el a
    #+ATTR_LATEX: :float nil
 #+caption: Resultado de $\frac{6 \times 8}{2}$
 [[../img/7.png]]
-** Octagono ``Real''
+** Octágono ``Real''
 Se propone un octágono, con valores enteros de un perimetro a $40[u]$ y un apotema de $6[u]$,  donde su área resultante seria $120$ (En la [[fig:geo51x7][siguiente figura]] se muestra un trazo ``real'' usando geogebra).
 #+label: fig:geo51x7
 #+caption: Octágono en Geogebra: $perimetro = 40$ y $apotema \approx 6$
