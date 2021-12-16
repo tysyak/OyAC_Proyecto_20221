@@ -15,13 +15,13 @@
 #+latex: {\scshape{\Large Organización y Arquitectura de Computadoras\par{}}}\vfill{}
 #+latex: {\huge \textbf{Proyecto de Organización y Arquitectura de Computadoras}}\vfill{}
 #+latex: {\Large Alumnos\\
+Brito Sánchez Diego
+
 Castelan Hernandez Mario
 
 Miranda Hernández Alejandro
 
 Romero Andrade Cristian
-
-Sánchez Brito Diego
 
 Solano Morales Isaac Uriel
 
@@ -356,15 +356,21 @@ Teniendo el código ensamblador de referencia escribimos en memoria (=memoria_in
 \inputminted{vhdl}{../Risc/memoria_inst.vhd}
 \end{code}
 
-Se añadieron instrucciónes =NOP= para resolver el problema de la dependencia de datos, evitando así diversos retrasos e inconsistencias.
+Se añadieron instrucciones =NOP= para resolver el problema de la dependencia de datos, evitando así diversos retrasos e inconsistencias.
 
 * Resultado
-Ahora seguimos las instrucciónes de la sección \ref{sec:uso} para ejecutar el algoritmo implementado en una arquitectura RISC.
+Ahora seguimos las instrucciones de la sección \ref{sec:uso} para ejecutar el algoritmo implementado en una arquitectura RISC.
 #+caption: Resultado de $\frac{6 \times 8}{2}$
 [[../img/7.png]]
 * Conclusiones
+*** Brito Sánchez Diego
+Con el desarrollo de este proyecto pusimos en práctica todo lo aprendido a lo largo del curso, tanto teórico como práctico, donde se logró implementar una arquitectura RISC y sobre ella desarrollar las instrucciones necesarias para obtener el algoritmo que calcula el área de un octágono, por lo que podemos decir que se logró el objetivo de este proyecto, ya que comprendimos el funcionamiento de esta arquitectura y como se mostró en las simulaciones también nuestro algoritmo funcionó como se esperaba.
 *** Castelan Hernandez Mario
 Se logró cumplir el objetivo, ya que implementamos las instrucciones necesarias para ejecutar el algoritmo del área de un octágono en una arquitectura RISC que desarrollamos en el laboratorio, además pusimos en práctica los conocimientos adquiridos durante el semestre para poder entender como funciona esta arquitectura y poder desarrollar el programa en ensamblador que realiza el algoritmo
+*** Miranda Hernández Alejandro
+En este proyecto pusimos en práctica lo aprendido en teoría acerca de la arquitectura RISC, como se dividen sus instrucciones en 4 etapas. Se compararon las arquitecturas RISC y CISC, y se observó como una arquitectura RISC puede ejecutar instrucciones en paralelo al ser estas divididas en etapas, mientras que la arquitectura CISC las ejecuta secuencialmente. Por último, se observó que únicamente la arquitectura RISC puede tener errores por dependencia de datos, y estos tienen que ser solventados mediante hardware o software.
+También comprendimos el funcionamiento de la arquitectura RISC del Motorola 68HC11. Se diseñaron los esquemas correspondientes para instrucciones de multiplicación y de división, posteriormente se configuraron las señales correspondientes en un archivo de Excel. Finalmente se agregaron a la memoria en su archivo VHDL.
+Después se busco modificar la memoria RAM de instrucciones, para crear una secuencia que nos permitiera calcular el área de un octágono, a partir de que nos proporcionaran su perímetro y su apotema. Por todo lo anteriormente menciona se puede afirmar que se cumplió el objetivo del proyecto.
 *** Romero Andrade Cristian
 Se desarrolló la arquitectura Risc, donde se puede observar que la ejecución de cada instrucción es paralela, esto conlleva a una velocidad de procesamiento considerable en comparación a otras arquitecturas. sin embargo esta contiene un problema ya que tiene una dependencia de datos para cada instrucción y puede causar retrasos e inconsistencias, sin embargo esta se puede solucionar usando la operación NOP (el la práctica estas interrupciones se encarga el compilador o bien ya esta resuelta por hardware).
 * Manual de usuario
@@ -468,4 +474,4 @@ Descargar o clonar el repositorio de [[https://github.com/tysyak/OyAC_Proyecto_2
 
 [fn:2]Ya que la etapa 04 es solo una salida o las banderas que se activan durante todo el proceso
 
-[fn:1]Se recomienda apreciar la arquitectura en Quartus descargando el proyecto como se explica en la [[sec:instalacion][seccion instalación]].
+[fn:1]Se recomienda apreciar la arquitectura en Quartus descargando el proyecto como se explica en la [[sec:instalacion][sección instalación]].

@@ -1,4 +1,4 @@
-% Created 2021-12-15 mié 23:15
+% Created 2021-12-16 jue 11:13
 % Intended LaTeX compiler: lualatex
 \documentclass{IEEEtran}
 \usepackage[left=1.5cm,right=1.5cm,letterpaper]{geometry}
@@ -44,13 +44,13 @@
 {\scshape{\Large Organización y Arquitectura de Computadoras\par{}}}\vfill{}
 {\huge \textbf{Proyecto de Organización y Arquitectura de Computadoras}}\vfill{}
 {\Large Alumnos\\
+Brito Sánchez Diego
+
 Castelan Hernandez Mario
 
 Miranda Hernández Alejandro
 
 Romero Andrade Cristian
-
-Sánchez Brito Diego
 
 Solano Morales Isaac Uriel
 
@@ -69,27 +69,27 @@ Solano Morales Isaac Uriel
 \tableofcontents
 
 \section{Objetivo}
-\label{sec:orgcf1df0f}
+\label{sec:org3c5fd6a}
 El alumno programará las instrucciones necesarias para poder ejecutar un algoritmo sobre una arquitectura de computadora  diseñada por el alumno.
 \subsection{Algoritmos}
-\label{sec:org731bfb7}
+\label{sec:orgab166a6}
 Se debe elegir alguno de los algoritmos propuestos e implementar la o las instrucciones necesarias para llevarlo a cabo. Los modos de direccionamiento y la arquitectura son libres de elección.
 Si se elige la arquitectura RISC, se tendrá un pontaje extra en la calificación. En
 dado caso que para su algoritmo existan riesgos por dependencia de datos, estos
 se solucionarían vía software (agregando instrucciones \texttt{NOP}) y no por hardware.
 \subsection{Área de un octágono}
-\label{sec:org87b5c07}
+\label{sec:org74b889f}
 Se debe implementar el algoritmo que permita obtener el área de un octágono. Se usará la siguiente formula:
 \(A = \frac{perimetro \times apotema}{2}\)
 siendo el \(perimetro\) y el \(apotema\) números enteros.
 \section{Introducción}
-\label{sec:org44245a3}
+\label{sec:orgdc01b48}
 \subsection{Arquitectura y organización de la computadora}
-\label{sec:org6d70538}
+\label{sec:org5ba59f6}
 La arquitectura de la computadora hace referencia al conjunto de elementos del computador que son visibles desde el punto de vista del programador de ensamblador.
 La organización de la computadora se refiere a las unidades funcionales del computador y al modo como están interconectadas.
 \subsection{Arquitectura Von Neumann}
-\label{sec:org770d39e}
+\label{sec:org3e68225}
 El objetivo de la arquitectura Von Neumann es construir un sistema flexible que permita resolver diferentes tipos de problemas. Para conseguir esta flexibilidad, se construye un sistema de propósito general que se pueda programar para resolver los diferentes tipos de problemas. Para cada problema concreto se define un programa diferente.
 La arquitectura Von Neumann se basa en tres propiedades:
 \begin{enumerate}
@@ -98,7 +98,7 @@ La arquitectura Von Neumann se basa en tres propiedades:
 \item La ejecución de las instrucciones se produce de manera secuencial: después de ejecutar una instrucción se ejecuta la instrucción siguiente que hay en la memoria principal, pero se puede romper la secuencia de ejecución utilizando instrucciones de ruptura de secuencia.
 \end{enumerate}
 \subsection{Arquitectura Harvard}
-\label{sec:org985add2}
+\label{sec:orgf84fd10}
 La organización del computador según el modelo Harvard, básicamente, se distingue del modelo Von Neumann por la división de la memoria en una memoria de instrucciones y una memoria de datos, de manera que el procesador puede acceder separada y simultáneamente a las dos memorias.
 \begin{figure}[htbp]
 \centering
@@ -106,14 +106,14 @@ La organización del computador según el modelo Harvard, básicamente, se disti
 \caption{Arquitectura Harvard}
 \end{figure}
 \subsection{RISC: Reduced instruction set computer processor}
-\label{sec:orgec51ecd}
+\label{sec:orgbf665d7}
 Es una arquitectura de procesadores basada en una colección de instrucciones simples y altamente personalizadas. RISC se construye para minimizar el tiempo de ejecución de una instrucción, optimizando y limitando el número de instrucciones. La arquitectura RISC tiene la capacidad de por cada ciclo de instrucción se da solo un ciclo de reloj. Cada ciclo debe contener cuatro etapas: buscar, decodificar, ejecutar y guardar.
 \subsection{CISC: complex instruction set computer}
-\label{sec:org6dfac74}
+\label{sec:org7596041}
 CISC es un sistema de instrucciones desarrollado por Intel que requieren de mucho tiempo para ser ejecutadas completamente.
 Lo que sucede en CISC es que se reduce la cantidad de instrucciones de un software y se ignora el número de ciclos por instrucción. Se especializa en crear instrucciones complejas en el hardware, ya que el hardware siempre será mucho más rápido que el software.
 \section{Desarrollo}
-\label{sec:orgca6fb84}
+\label{sec:org06fb927}
 Primeramente se diseñan las etapas de la arquitectura RISC, las cuales se dividen en cuatro:
 \begin{enumerate}
 \item Llamada a la instrucción
@@ -145,7 +145,7 @@ Se ve que los pasos son similares a los ejecutados en las cartas ASM para las in
 \caption{Etapas para la arquitectura segmentada del 68HC11}
 \end{figure}
 \subsection{Etapa 1}
-\label{sec:org69a78c2}
+\label{sec:orgb7b968d}
 En esta etapa tenemos contadores, incrementadores, multiplexores y memoria de instrucciones conectados entre sí \cite[p, 133]{SAVAGE}, arrojando su salida al registro de la PC y las instrucciones que serán tomadas posteriormente por la etapa 2.
 \begin{center}
 \includegraphics[width=0.6\linewidth]{./img/e1s.png}
@@ -157,9 +157,9 @@ En esta etapa tenemos contadores, incrementadores, multiplexores y memoria de in
 \caption{Etapa 1}
 \end{figure}
 \subsection{Etapa 2}
-\label{sec:org6205604}
+\label{sec:org1155228}
 Luego tenemos la etapa 2 con los bloques que se muestran en la introducción, destacando los registros internos básicos, módulos de control, sumadores y registros de acoplamiento para
-poder ejecutar el pipeline, teniendo sus respectivas salidas para poder hacerlo\footnote{Se recomienda apreciar la arquitectura en Quartus descargando el proyecto como se explica en la \hyperref[sec:instalacion]{seccion instalación}.}.
+poder ejecutar el pipeline, teniendo sus respectivas salidas para poder hacerlo\footnote{Se recomienda apreciar la arquitectura en Quartus descargando el proyecto como se explica en la \hyperref[sec:instalacion]{sección instalación}.}.
 \begin{center}
 \includegraphics[width=\linewidth]{./img/e2s.png}
 \captionof{figure}{Etapa 2 \cite[p, 135]{SAVAGE}}
@@ -170,7 +170,7 @@ poder ejecutar el pipeline, teniendo sus respectivas salidas para poder hacerlo\
 \caption{Etapa 2}
 \end{figure}
 \subsection{Etapa 3}
-\label{sec:orge6aad5b}
+\label{sec:org722b530}
 Finalmente, la etapa 03\footnote{Ya que la etapa 04 es solo una salida o las banderas que se activan durante todo el proceso}, lo cual se hace directamente para poder simularlo de una buena manera en vhdl.
 Como podemos ver en esta etapa 03 tenemos la UPA y el generador de banderas, los cuales se muestran de forma independiente, cada uno con su bloque para poder controlarlo de mejor manera y poder mostrarlo en la simulación
 \begin{center}
@@ -188,10 +188,10 @@ Como podemos ver en esta etapa 03 tenemos la UPA y el generador de banderas, los
 \end{center}
 
 \subsection{Resolución del algoritmo}
-\label{sec:org6bf37e7}
+\label{sec:orgb691a9a}
 Primeramente definimos el problema, es la división entre 2 de el producto de dos números.
 \subsubsection{División}
-\label{sec:org116026f}
+\label{sec:org350904d}
 La división se puede simular haciendo que se recorra un bit a la derecha, por lo tanto, basándonos del set de instrucciones la instrucción perfecta es \texttt{ASRB}\footnote{Notación Mnemónico.} (\(0057\)\footnote{Instrucción.}) \cite[p. 24]{PM1999}, podemos implementarlo en RISC definiendo las siguientes señales de control:
 \begin{table}[htbp]
 \caption{Señales de control de \texttt{ASRB} (\(0057\))}
@@ -225,7 +225,7 @@ Por lo tanto, el fragmento en el archivo \texttt{u\_control.vhd} seria el siguie
 \inputminted[firstline=413, lastline=431]{vhdl}{../Risc/u_control.vhd}
 \end{code}
 \subsubsection{Multiplicación}
-\label{sec:org2da015f}
+\label{sec:orgb86238b}
 Tenemos dos opciones:, 1) realizar el módulo de multiplicación para la arquitectura en RISC y 2) realizar la multiplicación usando software. Se optó por usar software, por lo tanto definimos nuestro algoritmo en la cual nos basaremos para implementarlo en ensamblador y después pasarlo a memoria.
 \begin{algorithm}
 \caption{Algoritmo de multiplicación propuesto}
@@ -468,28 +468,36 @@ Teniendo el código ensamblador de referencia escribimos en memoria (\texttt{mem
 \inputminted{vhdl}{../Risc/memoria_inst.vhd}
 \end{code}
 
-Se añadieron instrucciónes \texttt{NOP} para resolver el problema de la dependencia de datos, evitando así diversos retrasos e inconsistencias.
+Se añadieron instrucciones \texttt{NOP} para resolver el problema de la dependencia de datos, evitando así diversos retrasos e inconsistencias.
 
 \section{Resultado}
-\label{sec:orgcc271b6}
-Ahora seguimos las instrucciónes de la sección \ref{sec:uso} para ejecutar el algoritmo implementado en una arquitectura RISC.
+\label{sec:orge7f67d7}
+Ahora seguimos las instrucciones de la sección \ref{sec:uso} para ejecutar el algoritmo implementado en una arquitectura RISC.
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=.9\linewidth]{../img/7.png}
-\caption{Resultados}
+\caption{Resultado de \(\frac{6 \times 8}{2}\)}
 \end{figure}
 \section{Conclusiones}
-\label{sec:orga38d001}
+\label{sec:org213234e}
+\subsubsection{Brito Sánchez Diego}
+\label{sec:orgc3ea57f}
+Con el desarrollo de este proyecto pusimos en práctica todo lo aprendido a lo largo del curso, tanto teórico como práctico, donde se logró implementar una arquitectura RISC y sobre ella desarrollar las instrucciones necesarias para obtener el algoritmo que calcula el área de un octágono, por lo que podemos decir que se logró el objetivo de este proyecto, ya que comprendimos el funcionamiento de esta arquitectura y como se mostró en las simulaciones también nuestro algoritmo funcionó como se esperaba.
 \subsubsection{Castelan Hernandez Mario}
-\label{sec:org31c4259}
+\label{sec:org9a76aee}
 Se logró cumplir el objetivo, ya que implementamos las instrucciones necesarias para ejecutar el algoritmo del área de un octágono en una arquitectura RISC que desarrollamos en el laboratorio, además pusimos en práctica los conocimientos adquiridos durante el semestre para poder entender como funciona esta arquitectura y poder desarrollar el programa en ensamblador que realiza el algoritmo
+\subsubsection{Miranda Hernández Alejandro}
+\label{sec:orgc6ce20b}
+En este proyecto pusimos en práctica lo aprendido en teoría acerca de la arquitectura RISC, como se dividen sus instrucciones en 4 etapas. Se compararon las arquitecturas RISC y CISC, y se observó como una arquitectura RISC puede ejecutar instrucciones en paralelo al ser estas divididas en etapas, mientras que la arquitectura CISC las ejecuta secuencialmente. Por último, se observó que únicamente la arquitectura RISC puede tener errores por dependencia de datos, y estos tienen que ser solventados mediante hardware o software.
+También comprendimos el funcionamiento de la arquitectura RISC del Motorola 68HC11. Se diseñaron los esquemas correspondientes para instrucciones de multiplicación y de división, posteriormente se configuraron las señales correspondientes en un archivo de Excel. Finalmente se agregaron a la memoria en su archivo VHDL.
+Después se busco modificar la memoria RAM de instrucciones, para crear una secuencia que nos permitiera calcular el área de un octágono, a partir de que nos proporcionaran su perímetro y su apotema. Por todo lo anteriormente menciona se puede afirmar que se cumplió el objetivo del proyecto.
 \subsubsection{Romero Andrade Cristian}
-\label{sec:org13c4ec7}
+\label{sec:org85c6669}
 Se desarrolló la arquitectura Risc, donde se puede observar que la ejecución de cada instrucción es paralela, esto conlleva a una velocidad de procesamiento considerable en comparación a otras arquitecturas. sin embargo esta contiene un problema ya que tiene una dependencia de datos para cada instrucción y puede causar retrasos e inconsistencias, sin embargo esta se puede solucionar usando la operación NOP (el la práctica estas interrupciones se encarga el compilador o bien ya esta resuelta por hardware).
 \section{Manual de usuario}
-\label{sec:org2f4f6ab}
+\label{sec:orgd3665fc}
 \subsection{Prerrequisitos}
-\label{sec:orgef8bf23}
+\label{sec:org7839e0a}
 \begin{itemize}
 \item Contar con Git instalado en su sistema operativo (Opcional)
 \item Contar con alguno de los siguiente sistemas operativos:
@@ -528,7 +536,7 @@ Intel Advanced Link Analyzer & \(9[GB]\)\\
 \end{table}
 \end{itemize}
 \subsection{Instalación\label{sec:instalacion}}
-\label{sec:orgfd6df43}
+\label{sec:orgaf87f38}
 Descargar o clonar el repositorio de \href{https://github.com/tysyak/OyAC\_Proyecto\_20221}{Github}: \href{https://github.com/tysyak/OyAC\_Proyecto\_20221}{\texttt{github.com/tysyak/OyAC\_Proyecto\_20221}}
 \begin{figure}[htbp]
 \centering
@@ -536,7 +544,7 @@ Descargar o clonar el repositorio de \href{https://github.com/tysyak/OyAC\_Proye
 \caption{Repositorio del proyecto}
 \end{figure}
 \subsection{Uso\label{sec:uso}}
-\label{sec:orgba46e7d}
+\label{sec:orgcdba1e8}
 \begin{enumerate}
 \item Abrir Quartus Prime\footnote{A partir Quartus v21.1 modelsim es sustituido, por lo tanto la solución en la simulación vista en el presente solo sirve para versiones anteriores a 21.1}
 \item En el menú File seleccionar abrir proyecto o presionar \texttt{Control + J}
@@ -603,7 +611,7 @@ Descargar o clonar el repositorio de \href{https://github.com/tysyak/OyAC\_Proye
 \end{enumerate}
 
 \section{Referencias}
-\label{sec:orga69d27a}
+\label{sec:orga16078a}
 \nocite{*}
 \printbibliography{}
 
