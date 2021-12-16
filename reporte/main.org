@@ -338,7 +338,7 @@ ldaa 4
 ldab 2
 aba
 ldab 3
-ldaa 4
+staa 4
 ldaa 0
 inca
 
