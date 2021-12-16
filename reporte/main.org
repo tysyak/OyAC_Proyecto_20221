@@ -363,6 +363,8 @@ Ahora seguimos las instrucciónes de la sección \ref{sec:uso} para ejecutar el 
 #+caption: Resultados
 [[../img/7.png]]
 * Conclusiones
+*** Castelan Hernandez Mario
+Se logró cumplir el objetivo, ya que implementamos las instrucciones necesarias para ejecutar el algoritmo del área de un octágono en una arquitectura RISC que desarrollamos en el laboratorio, además pusimos en práctica los conocimientos adquiridos durante el semestre para poder entender como funciona esta arquitectura y poder desarrollar el programa en ensamblador que realiza el algoritmo
 *** Romero Andrade Cristian
 Se desarrolló la arquitectura Risc, donde se puede observar que la ejecución de cada instrucción es paralela, esto conlleva a una velocidad de procesamiento considerable en comparación a otras arquitecturas. sin embargo esta contiene un problema ya que tiene una dependencia de datos para cada instrucción y puede causar retrasos e inconsistencias, sin embargo esta se puede solucionar usando la operación NOP (el la práctica estas interrupciones se encarga el compilador o bien ya esta resuelta por hardware).
 * Manual de usuario
