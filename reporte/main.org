@@ -316,7 +316,7 @@ Teniendo este punto resuelto buscamos que instrucciones nos pueden servir\cite[p
   \end{code}
 
 \begin{code}
-\caption{Pseudocódigo ensamblador que nos auxiliara para implementarlo en la memoria, se usa como entradas 6 y 2}
+\caption{Pseudocódigo ensamblador que nos auxiliara para implementarlo en la memoria, se usa como entradas 6 y 8}
 \begin{minted}[linenos,numbersep=1pt]{GAS}
 ldaa 6 ; Valor de entrada A
 staa 2
